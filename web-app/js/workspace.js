@@ -69,7 +69,13 @@ Ext.onReady(function()
     );
 
     var maintoolbar = Ext.ComponentMgr.get('maintoolbar');
-    maintoolbar.add(saveComparisonButton);
+    var lastButtonIndex = maintoolbar.items.findIndexBy(function(me) {
+        return (me.id == 'clearsubsetsbutton');
+    })
+
+    maintoolbar.insertButton(new Ext.Toolbar.Separator());
+    maintoolbar.insertButton(lastButtonIndex + 2, saveComparisonButton);
+
 
 }); //End of Ext.onReady
 
