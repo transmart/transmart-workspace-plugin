@@ -10,31 +10,38 @@ grails.project.dependency.resolution = {
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
-        grailsPlugins()
-        grailsHome()
-        grailsCentral()
-
-        // uncomment the below to enable remote dependency resolution
-        // from public Maven repositories
-        //mavenLocal()
-        //mavenCentral()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+		grailsCentral()
+		mavenCentral()
+		mavenRepo([
+			name: 'repo.transmartfoundation.org-public',
+			root: 'https://repo.transmartfoundation.org/content/repositories/public/'
+	])
     }
-    dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+	dependencies {
+		compile 'net.sf.opencsv:opencsv:2.3'
+		compile 'org.rosuda:Rserve:1.7.3'
+		compile 'org.mapdb:mapdb:0.9.7'
+		/* serializable ImmutableMap only on guava 16 */
+		compile group: 'com.google.guava', name: 'guava', version: '16.0-dev-20140115-68c8348'
+		compile 'org.transmartproject:transmart-core-api:1.0-SNAPSHOT'
 
-        // runtime 'mysql:mysql-connector-java:5.1.13'
-    }
+	}
     plugins {
-        compile(':transmart-java:1.0-SNAPSHOT')
-        compile(':biomart-domain:1.0-SNAPSHOT')
-        compile(':search-domain:1.0-SNAPSHOT')
-        compile(':spring-security-core:1.1.2')
-        compile(':rdc-rmodules:0.1')
-        compile(':quartz:0.4.2')
-        compile(':mail:1.0')
+	
+		compile(':transmart-java:1.0-SNAPSHOT')
+		compile(':biomart-domain:1.0-SNAPSHOT')
+		compile(':search-domain:1.0-SNAPSHOT')
+		compile (':transmart-legacy-db:0.3-SNAPSHOT')
+		//compile(':spring-security-core:1.1.2')
+		compile (':spring-security-core:2.0-RC2')
+		//compile ':spring-security-ldap:2.0-RC2')
+		compile(':rdc-rmodules:0.4-snapshot')
+		compile (':quartz:1.0-RC2')
+		compile(':mail:1.0')
+		build(":release:2.2.1",
+			":rest-client-builder:1.0.3") {
+		export = false
+	}
+		
     }
 }

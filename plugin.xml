@@ -5,16 +5,11 @@
 Adds workspace functionality to the tranSMART Dataset Explorer
 </description>
   <documentation>http://grails.org/plugin/transmart-workspace</documentation>
+  <type>TransmartWorkspaceGrailsPlugin</type>
   <resources>
-    <resource>BuildConfig</resource>
-    <resource>Config</resource>
-    <resource>DataSource</resource>
-    <resource>UrlMappings</resource>
     <resource>com.recomdata.grails.plugin.workspace.SaveAnalysisController</resource>
     <resource>com.recomdata.grails.plugin.workspace.SubsetController</resource>
     <resource>com.recomdata.grails.plugin.workspace.WorkspaceController</resource>
     <resource>com.recomdata.grails.plugin.workspace.SubsetService</resource>
   </resources>
-  <dependencies />
-  <behavior />
 </plugin>

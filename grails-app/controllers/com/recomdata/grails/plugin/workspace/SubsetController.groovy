@@ -18,7 +18,7 @@ package com.recomdata.grails.plugin.workspace
  *
  ******************************************************************/
 import grails.converters.JSON
-import search.AuthUser
+import org.transmart.searchapp.AuthUser
 
 import com.recomdata.transmart.domain.searchapp.Subset;
 
