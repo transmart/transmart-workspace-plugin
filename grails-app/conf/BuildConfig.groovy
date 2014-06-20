@@ -30,7 +30,7 @@ grails.project.dependency.resolution = {
     }
     plugins {
         compile(':transmart-java:1.0-SNAPSHOT')
-        compile(':biomart-domain:1.0-SNAPSHOT')
+        compile(':biomart-domain:1.1-SNAPSHOT')
         compile(':search-domain:1.0-SNAPSHOT')
         compile(':spring-security-core:1.1.2')
         compile(':rdc-rmodules:0.1')
