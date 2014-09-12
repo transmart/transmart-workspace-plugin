@@ -29,9 +29,9 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.13'
     }
     plugins {
-        compile(':transmart-java:1.0-SNAPSHOT')
-        compile(':biomart-domain:1.1-SNAPSHOT')
-        compile(':search-domain:1.0-SNAPSHOT')
+        compile(':transmart-java:1.2.1')
+        compile(':biomart-domain:1.2.1')
+        compile(':search-domain:1.2.1')
         compile(':spring-security-core:1.1.2')
         compile(':rdc-rmodules:0.1')
         compile(':quartz:0.4.2')
