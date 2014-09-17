@@ -36,5 +36,15 @@ grails.project.dependency.resolution = {
         compile(':rdc-rmodules:0.1')
         compile(':quartz:0.4.2')
         compile(':mail:1.0')
+
+        // support for static code analysis
+        compile ":codenarc:0.21"
+    }
+}
+
+codenarc.reports = {
+    TransmartAppReport('html') {
+        outputFile = 'CodeNarc-transmart-workspace-plugin-Report.html'
+        title = 'Report for transmart-workspace-plugin'
     }
 }
